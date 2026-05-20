@@ -4,7 +4,7 @@
 Rustic row house with fireplace
 
 ## Fun Fact
-Some Agents believe Humans once live here.
+Some Agents believe Humans once lived here.
 
 ---
 
