@@ -35,7 +35,7 @@ A `pyproject.toml` is included at the repo root. Install all packages with:
 uv sync
 ```
 
-> All pinned wheels are sourced from PyPI and are at older to ensure stability/ time for virus ID in new packages.
+> All pinned wheels are sourced from PyPI. We intentionally use older pinned versions to improve stability, reduce supply-chain risk, and allow time for vulnerability scanning of newly released packages.
 
 ---
 
