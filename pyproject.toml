@@ -1,0 +1,29 @@
+[project]
+name = "emergence-world"
+version = "0.1.0"
+description = "A round-based autonomous agent simulation powered by Claude"
+requires-python = ">=3.11"
+
+dependencies = [
+    "anthropic==0.49.0",        # 2025-02-28 —  >1 month old
+    "python-dotenv==1.2.2",     # 2026-03-01 —  >1 month old
+    "pydantic==2.13.2",         # 2026-04-17 —  >1 month old
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.5",            # 2025-03-02 —  >1 month old
+    "pytest-asyncio==0.24.0",   # 2024-09-22 —  >1 month old
+    "ruff==0.8.6",              # 2025-01-13 —  >1 month old
+]
+
+[build-system]
+requires = ["hatchling==1.29.0"]  # 2026-02-23 —  >1 month old
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["simulation"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
