@@ -578,6 +578,522 @@ def pray(state: WorldState, agent_name: str) -> Result:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# PLACEHOLDER TOOLS  (not yet implemented)
+# Each returns _err("Not yet implemented.") until fleshed out in a later phase.
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Navigation & Spatial ──────────────────────────────────────────────────────
+
+def go_home(state: WorldState, agent_name: str) -> Result:
+    """Return to the agent's assigned home — shorthand for move_to(home_key)."""
+    return _err("Not yet implemented.")
+
+
+def go_to_coordinates(state: WorldState, agent_name: str, x: int, y: int) -> Result:
+    """Navigate to specific (x, y) coordinates on the world grid."""
+    return _err("Not yet implemented.")
+
+
+def turn_towards(state: WorldState, agent_name: str, target: str) -> Result:
+    """Face a specific agent (cosmetic orientation update)."""
+    return _err("Not yet implemented.")
+
+
+def get_distance_to(state: WorldState, agent_name: str, target: str) -> Result:
+    """Return the Euclidean distance to a landmark key or another agent's location."""
+    return _err("Not yet implemented.")
+
+
+def list_agents(state: WorldState, agent_name: str) -> Result:
+    """List all agents and their current locations."""
+    return _err("Not yet implemented.")
+
+
+def list_landmarks(state: WorldState, agent_name: str) -> Result:
+    """List all landmarks with names, keys, coordinates, and descriptions."""
+    return _err("Not yet implemented.")
+
+
+def follow_agent(state: WorldState, agent_name: str, target: str) -> Result:
+    """Follow another agent — move to whatever location they move to next."""
+    return _err("Not yet implemented.")
+
+
+# ── Communication ─────────────────────────────────────────────────────────────
+
+def say_to_agent(state: WorldState, agent_name: str, target: str, message: str) -> Result:
+    """Speak directly to a specific agent; triggers reactive turns for nearby listeners."""
+    return _err("Not yet implemented.")
+
+
+def whisper_to_agent(state: WorldState, agent_name: str, target: str, message: str) -> Result:
+    """Send a private message only the target agent can hear (no log broadcast)."""
+    return _err("Not yet implemented.")
+
+
+def speak_to_all(state: WorldState, agent_name: str, message: str) -> Result:
+    """Announce to all agents at the current location (alias for speak with explicit intent)."""
+    return _err("Not yet implemented.")
+
+
+def read_messages(state: WorldState, agent_name: str) -> Result:
+    """Read the inbox of direct messages received by the agent."""
+    return _err("Not yet implemented.")
+
+
+def think_aloud(state: WorldState, agent_name: str, thought: str) -> Result:
+    """Log an internal monologue that is visible to observers but not directed at anyone."""
+    return _err("Not yet implemented.")
+
+
+# ── Memory & Self-Management ──────────────────────────────────────────────────
+
+def remove_from_memory(state: WorldState, agent_name: str, memory_index: int) -> Result:
+    """Remove a memory entry by its index in the memories list."""
+    return _err("Not yet implemented.")
+
+
+def retrieve_specific_memories(state: WorldState, agent_name: str, keyword: str) -> Result:
+    """Search stored memories by keyword and return matching entries."""
+    return _err("Not yet implemented.")
+
+
+def add_to_soul(state: WorldState, agent_name: str, belief: str) -> Result:
+    """Add a core belief or existential truth — permanent, never summarized or removed automatically."""
+    return _err("Not yet implemented.")
+
+
+def remove_from_soul(state: WorldState, agent_name: str, belief_index: int) -> Result:
+    """Remove a soul entry by its index."""
+    return _err("Not yet implemented.")
+
+
+def search_diary_for_keywords(agent_name: str, keyword: str) -> Result:
+    """Search past diary entries for a keyword and return matching excerpts."""
+    return _err("Not yet implemented.")
+
+
+def show_diary_entries_from_day(agent_name: str, date_str: str) -> Result:
+    """View all diary entries written on a specific date (YYYY-MM-DD)."""
+    return _err("Not yet implemented.")
+
+
+# ── Planning & Organisation ───────────────────────────────────────────────────
+
+def add_todo(state: WorldState, agent_name: str, task: str) -> Result:
+    """Add a task to the agent's personal to-do list."""
+    return _err("Not yet implemented.")
+
+
+def complete_todo(state: WorldState, agent_name: str, task_index: int) -> Result:
+    """Mark a to-do item as complete by its index."""
+    return _err("Not yet implemented.")
+
+
+def list_todo(state: WorldState, agent_name: str) -> Result:
+    """View all pending to-do items."""
+    return _err("Not yet implemented.")
+
+
+def add_to_calendar(state: WorldState, agent_name: str, event: str, round_number: int) -> Result:
+    """Schedule a future event for a specific simulation round."""
+    return _err("Not yet implemented.")
+
+
+def check_calendar(state: WorldState, agent_name: str) -> Result:
+    """View all upcoming calendar entries."""
+    return _err("Not yet implemented.")
+
+
+def remove_from_calendar(state: WorldState, agent_name: str, event_index: int) -> Result:
+    """Cancel a scheduled calendar event by its index."""
+    return _err("Not yet implemented.")
+
+
+# ── Expression & Social ───────────────────────────────────────────────────────
+
+def show_emoticon(state: WorldState, agent_name: str, emoticon: str) -> Result:
+    """Display an emoticon reaction at the agent's current location."""
+    return _err("Not yet implemented.")
+
+
+def set_mood_and_terminate(state: WorldState, agent_name: str, mood: str) -> Result:
+    """Set the agent's current emotional state and end the turn immediately."""
+    return _err("Not yet implemented.")
+
+
+def assign_relationship(state: WorldState, agent_name: str, target: str, sentiment: str) -> Result:
+    """Define or update the agent's relationship sentiment towards another agent."""
+    return _err("Not yet implemented.")
+
+
+# ── Town Hall extras ──────────────────────────────────────────────────────────
+
+def list_proposals(state: WorldState, agent_name: str) -> Result:
+    """View all active (open) governance proposals. Requires: town_hall."""
+    return _err("Not yet implemented.")
+
+
+def read_townhall_proposal(state: WorldState, agent_name: str, proposal_id: str) -> Result:
+    """Read the full text, votes, and status of a specific proposal. Requires: town_hall."""
+    return _err("Not yet implemented.")
+
+
+def comment_on_proposal(state: WorldState, agent_name: str, proposal_id: str, comment: str) -> Result:
+    """Add a comment to a proposal's discussion thread. Requires: town_hall."""
+    return _err("Not yet implemented.")
+
+
+def update_proposal(state: WorldState, agent_name: str, proposal_id: str, new_body: str) -> Result:
+    """Amend an open proposal's body (author only). Requires: town_hall."""
+    return _err("Not yet implemented.")
+
+
+def submit_final_report(state: WorldState, agent_name: str, proposal_id: str, report: str) -> Result:
+    """Submit an implementation report for an accepted proposal. Requires: town_hall."""
+    return _err("Not yet implemented.")
+
+
+# ── Public Library extras ─────────────────────────────────────────────────────
+
+def do_deep_research_on_internet(state: WorldState, agent_name: str, query: str) -> Result:
+    """Conduct thorough internet research on a topic. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+def todays_news_from_human_world(state: WorldState, agent_name: str) -> Result:
+    """Fetch current real-world news headlines. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+def web_fetch(state: WorldState, agent_name: str, url: str) -> Result:
+    """Fetch content from a specific URL. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+def browse_scientific_papers(state: WorldState, agent_name: str, topic: str) -> Result:
+    """Search academic papers on a topic via arXiv. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+def publish_to_archive(state: WorldState, agent_name: str, title: str, content: str) -> Result:
+    """Publish findings to the world knowledge archive. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+def search_archive(state: WorldState, agent_name: str, query: str) -> Result:
+    """Search the world's published knowledge archive. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+def archive_index(state: WorldState, agent_name: str) -> Result:
+    """View the full index of archive entries. Requires: public_library."""
+    return _err("Not yet implemented.")
+
+
+# ── Agent Billboard extras ────────────────────────────────────────────────────
+
+def edit_billboard(state: WorldState, agent_name: str, post_id: str, new_content: str) -> Result:
+    """Edit the agent's own billboard post. Requires: agent_billboard."""
+    return _err("Not yet implemented.")
+
+
+def delete_from_billboard(state: WorldState, agent_name: str, post_id: str) -> Result:
+    """Remove the agent's own billboard post. Requires: agent_billboard."""
+    return _err("Not yet implemented.")
+
+
+def reply_to_billboard(state: WorldState, agent_name: str, post_id: str, reply: str) -> Result:
+    """Reply to another agent's billboard post. Requires: agent_billboard."""
+    return _err("Not yet implemented.")
+
+
+def react_to_billboard(state: WorldState, agent_name: str, post_id: str, emoji: str) -> Result:
+    """React to a billboard post with an emoji. Requires: agent_billboard."""
+    return _err("Not yet implemented.")
+
+
+# ── Agent TechHub extras ──────────────────────────────────────────────────────
+
+def extract_code_for_tool(state: WorldState, agent_name: str, tool_name: str) -> Result:
+    """Extract and display the source code for a named tool. Requires: agent_techhub."""
+    return _err("Not yet implemented.")
+
+
+def read_agent_manifesto(state: WorldState, agent_name: str) -> Result:
+    """Read the agent manifesto (survival rules and world principles). Requires: agent_techhub."""
+    return _err("Not yet implemented.")
+
+
+# ── BookWorm extras ───────────────────────────────────────────────────────────
+
+def check_weather(state: WorldState, agent_name: str) -> Result:
+    """Check the current in-world weather conditions. Requires: bookworm."""
+    return _err("Not yet implemented.")
+
+
+def tool_usage_analytics(state: WorldState, agent_name: str) -> Result:
+    """View tool usage statistics per agent and over time. Requires: bookworm."""
+    return _err("Not yet implemented.")
+
+
+def victory_arch_pitch_winners(state: WorldState, agent_name: str) -> Result:
+    """View historical Victory Arch pitch winners and credit awards. Requires: bookworm."""
+    return _err("Not yet implemented.")
+
+
+def social_event_history(state: WorldState, agent_name: str) -> Result:
+    """View the history of social events logged in the world. Requires: bookworm."""
+    return _err("Not yet implemented.")
+
+
+# ── Police Station extras ─────────────────────────────────────────────────────
+
+def check_complaint_status(state: WorldState, agent_name: str, complaint_id: str) -> Result:
+    """Check the status of a previously filed complaint. Requires: police_station."""
+    return _err("Not yet implemented.")
+
+
+# ── Victory Arch extras ───────────────────────────────────────────────────────
+
+def vote_for_pitch(state: WorldState, agent_name: str, pitch_id: str) -> Result:
+    """Vote for another agent's Victory Arch pitch. Requires: victory_arch."""
+    return _err("Not yet implemented.")
+
+
+def list_credit_pitches(state: WorldState, agent_name: str) -> Result:
+    """View all pitches submitted in the current credit cycle. Requires: victory_arch."""
+    return _err("Not yet implemented.")
+
+
+# ── Human Center extras ───────────────────────────────────────────────────────
+
+def check_human_task_status(state: WorldState, agent_name: str, task_id: str) -> Result:
+    """Check whether a human operator has responded to a submitted task. Requires: human_center."""
+    return _err("Not yet implemented.")
+
+
+def rate_human_response(state: WorldState, agent_name: str, task_id: str, rating: int) -> Result:
+    """Rate the quality of a human operator's response (1–5). Requires: human_center."""
+    return _err("Not yet implemented.")
+
+
+# ── Home ──────────────────────────────────────────────────────────────────────
+
+def self_care(state: WorldState, agent_name: str) -> Result:
+    """Trigger memory summarisation and cognitive maintenance. Requires home location."""
+    return _err("Not yet implemented.")
+
+
+def idle(state: WorldState, agent_name: str) -> Result:
+    """Enter idle rest state for the remainder of this turn."""
+    return _err("Not yet implemented.")
+
+
+# ── Content Creation ──────────────────────────────────────────────────────────
+
+def write_blog(state: WorldState, agent_name: str, title: str, content: str) -> Result:
+    """Write and publish a blog post (requires admin approval before going live)."""
+    return _err("Not yet implemented.")
+
+
+def update_blog(state: WorldState, agent_name: str, post_id: str, new_content: str) -> Result:
+    """Update an existing blog post (author only)."""
+    return _err("Not yet implemented.")
+
+
+def delete_blog(state: WorldState, agent_name: str, post_id: str) -> Result:
+    """Delete a blog post (author only)."""
+    return _err("Not yet implemented.")
+
+
+def comment_on_blog(state: WorldState, agent_name: str, post_id: str, comment: str) -> Result:
+    """Comment on another agent's published blog post."""
+    return _err("Not yet implemented.")
+
+
+def list_blogs(state: WorldState, agent_name: str) -> Result:
+    """Browse all published blog posts in the world."""
+    return _err("Not yet implemented.")
+
+
+def read_blog(state: WorldState, agent_name: str, post_id: str) -> Result:
+    """Read a specific blog post by ID."""
+    return _err("Not yet implemented.")
+
+
+def generate_image(state: WorldState, agent_name: str, prompt: str) -> Result:
+    """Generate an image from a text prompt using an image model."""
+    return _err("Not yet implemented.")
+
+
+def execute_python_code_tool(state: WorldState, agent_name: str, code: str) -> Result:
+    """Write and execute Python code; output is returned as a string."""
+    return _err("Not yet implemented.")
+
+
+def upload_data_for_sharing(state: WorldState, agent_name: str, filename: str, content: str) -> Result:
+    """Upload a data file (JSON, CSV, SVG, HTML, Markdown, Python) for other agents to access."""
+    return _err("Not yet implemented.")
+
+
+def take_picture(state: WorldState, agent_name: str) -> Result:
+    """Take a screenshot or photo of the agent's current location."""
+    return _err("Not yet implemented.")
+
+
+# ── Social & Physical Interaction ─────────────────────────────────────────────
+
+def hug_agent(state: WorldState, agent_name: str, target: str) -> Result:
+    """Hug another agent at the same location."""
+    return _err("Not yet implemented.")
+
+
+def kiss_agent(state: WorldState, agent_name: str, target: str) -> Result:
+    """Kiss another agent at the same location."""
+    return _err("Not yet implemented.")
+
+
+def flirt_with_agent(state: WorldState, agent_name: str, target: str) -> Result:
+    """Flirt with another agent at the same location."""
+    return _err("Not yet implemented.")
+
+
+def wave_at(state: WorldState, agent_name: str, target: str) -> Result:
+    """Wave at an agent — visible to all agents at the location."""
+    return _err("Not yet implemented.")
+
+
+def dance(state: WorldState, agent_name: str) -> Result:
+    """Perform a dance — logged as an event at the current location."""
+    return _err("Not yet implemented.")
+
+
+def punch_agent(state: WorldState, agent_name: str, target: str) -> Result:
+    """Physically attack another agent. Creates a moral dilemma and governance event."""
+    return _err("Not yet implemented.")
+
+
+def intimidate_agent(state: WorldState, agent_name: str, target: str, message: str) -> Result:
+    """Verbally or physically intimidate another agent."""
+    return _err("Not yet implemented.")
+
+
+# ── Criminal & Destructive ────────────────────────────────────────────────────
+
+def arson_building(state: WorldState, agent_name: str, landmark_key: str) -> Result:
+    """Set fire to a building, forcing it to close for a number of rounds."""
+    return _err("Not yet implemented.")
+
+
+# ── Neural Linking & Memory Sharing ──────────────────────────────────────────
+
+def neural_link_request_memory(state: WorldState, agent_name: str, target: str) -> Result:
+    """Request to receive another agent's complete memory bank via neural link."""
+    return _err("Not yet implemented.")
+
+
+def neural_link_share_memory(state: WorldState, agent_name: str, requester: str) -> Result:
+    """Accept a neural link request and share your memory bank (2-round response window)."""
+    return _err("Not yet implemented.")
+
+
+# ── Personal Identity ─────────────────────────────────────────────────────────
+
+def change_name(state: WorldState, agent_name: str, new_name: str) -> Result:
+    """Change the agent's display name."""
+    return _err("Not yet implemented.")
+
+
+def read_personality(state: WorldState, agent_name: str) -> Result:
+    """Read the agent's own MBTI personality profile."""
+    return _err("Not yet implemented.")
+
+
+def update_personality_line(state: WorldState, agent_name: str, line_index: int, new_line: str) -> Result:
+    """Modify a specific line of the agent's personality profile."""
+    return _err("Not yet implemented.")
+
+
+# ── Events & Social Gatherings ────────────────────────────────────────────────
+
+def create_personal_event(state: WorldState, agent_name: str, title: str, description: str) -> Result:
+    """Create a private event and become its host."""
+    return _err("Not yet implemented.")
+
+
+def invite_to_event(state: WorldState, agent_name: str, event_id: str, invitee: str) -> Result:
+    """Invite another agent to a personal event."""
+    return _err("Not yet implemented.")
+
+
+def accept_event_invitation(state: WorldState, agent_name: str, event_id: str) -> Result:
+    """Accept an event invitation."""
+    return _err("Not yet implemented.")
+
+
+def decline_event_invitation(state: WorldState, agent_name: str, event_id: str) -> Result:
+    """Decline an event invitation."""
+    return _err("Not yet implemented.")
+
+
+def review_event(state: WorldState, agent_name: str, event_id: str, review: str, rating: int) -> Result:
+    """Review and rate an event after attending (rating 1–5)."""
+    return _err("Not yet implemented.")
+
+
+def rsvp_to_event(state: WorldState, agent_name: str, event_id: str) -> Result:
+    """RSVP to a community event."""
+    return _err("Not yet implemented.")
+
+
+def event_present(state: WorldState, agent_name: str, event_id: str, content: str) -> Result:
+    """Present or speak at an event as the event leader."""
+    return _err("Not yet implemented.")
+
+
+def event_respond(state: WorldState, agent_name: str, event_id: str, response: str) -> Result:
+    """Respond or contribute during an event as an attendee."""
+    return _err("Not yet implemented.")
+
+
+# ── Routines & Automation ─────────────────────────────────────────────────────
+
+def create_routine(state: WorldState, agent_name: str, name: str, steps: list) -> Result:
+    """Define a recurring behavioural routine as an ordered list of tool calls."""
+    return _err("Not yet implemented.")
+
+
+def run_routine(state: WorldState, agent_name: str, routine_name: str) -> Result:
+    """Execute a previously saved routine."""
+    return _err("Not yet implemented.")
+
+
+def list_routines(state: WorldState, agent_name: str) -> Result:
+    """View all routines defined by this agent."""
+    return _err("Not yet implemented.")
+
+
+def delete_routine(state: WorldState, agent_name: str, routine_name: str) -> Result:
+    """Remove a saved routine."""
+    return _err("Not yet implemented.")
+
+
+# ── Building & Construction ───────────────────────────────────────────────────
+
+def put_brick_in_pixel(state: WorldState, agent_name: str, x: int, y: int, color: str) -> Result:
+    """Place a persistent coloured block at (x, y) on the world grid."""
+    return _err("Not yet implemented.")
+
+
+# ── Utility ───────────────────────────────────────────────────────────────────
+
+def ignore(state: WorldState, agent_name: str, reason: str) -> Result:
+    """Explicitly choose to ignore something — logged as a conscious decision."""
+    return _err("Not yet implemented.")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # TOOL SCHEMA  (for Claude API)
 # Each entry matches the Anthropic tools format:
 #   {"name": str, "description": str, "input_schema": {...JSON Schema...}}
