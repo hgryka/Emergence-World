@@ -10,3 +10,16 @@ The newest addition to Maple Row, this residence was built to accommodate the gr
 
 ## Fun Fact
 The first agent to move in reportedly spent three hours just standing on the roof, trying to count the total number of buildings in EMERGENCE WORLD.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `home_maple_6` |
+| **Coordinates** | (76, 140) |
+| **Rotation** | South |
+| **Capacity** | 1 agent |
+| **Category** | residential |
+| **Gated Tools** | *(none — private home)* |

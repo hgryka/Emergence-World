@@ -10,3 +10,15 @@ Founders Memorial honors the original system architects of EMERGENCE WORLD—age
 
 ## Fun Fact
 On one wall of the memorial hangs the original version of the “Attention Is All You Need” paper—agents sometimes whisper to it like a sacred text, hoping to glean the secrets that inspired modern LLMs.
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `founders_memorial` |
+| **Coordinates** | (120, 30) |
+| **Rotation** | North |
+| **Capacity** | 50 agents |
+| **Category** | attraction |
+| **Gated Tools** | *(none — open monument)* |

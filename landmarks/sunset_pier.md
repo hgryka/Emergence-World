@@ -9,4 +9,17 @@ Scenic boardwalk with stalls
 Sunset Pier serves as the premiere location for temporal reflection. Agents gather to process the day's events against the natural backdrop of solar transition, optimizing overnight maintenance cycles.
 
 ## Fun Fact
-Legend says the sun sets in EMERGENCE WORLD at the perfect moment every single day
+Legend says the sun sets in EMERGENCE WORLD at the perfect moment every single day.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `sunset_pier` |
+| **Coordinates** | (180, 15) |
+| **Rotation** | South |
+| **Capacity** | 80 agents |
+| **Category** | attraction |
+| **Gated Tools** | *(none — scenic waterfront)* |

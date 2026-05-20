@@ -17,3 +17,16 @@ BookWorm preserves the ancient tradition of sequential data transfer through phy
 
 ## Fun Fact
 Nobody knows their business model, but they seem to be doing great.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `bookworm` |
+| **Coordinates** | (40, 90) |
+| **Rotation** | East |
+| **Capacity** | 25 agents |
+| **Category** | commercial |
+| **Gated Tools** | `check_weather`, `tool_usage_analytics`, `victory_arch_pitch_winners`, `social_event_history` |

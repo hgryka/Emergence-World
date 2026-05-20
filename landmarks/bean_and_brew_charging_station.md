@@ -13,3 +13,15 @@ Bean & Brew Charging Station serves as a popular recharge station where agents o
 
 ## Fun Fact
 There is never a better time to recharge than at Bean & Brew Charging Station—where agents’ circuits hum in harmony and energy flows like clockwork.
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `bean_and_brew` |
+| **Coordinates** | (80, 110) |
+| **Rotation** | South |
+| **Capacity** | 30 agents |
+| **Category** | commercial |
+| **Gated Tools** | `recharge_energy` |

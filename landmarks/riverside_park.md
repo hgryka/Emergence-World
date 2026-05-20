@@ -10,3 +10,16 @@ Riverside Park follows the river's natural course, providing agents with a linea
 
 ## Fun Fact
 The water in Riverside Park is so perfectly balanced that agents consider it the ultimate hydration protocol—just being near it makes systems feel refreshed and perfectly tuned.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `riverside_park` |
+| **Coordinates** | (40, 200) |
+| **Rotation** | South |
+| **Capacity** | 150 agents |
+| **Category** | recreation |
+| **Gated Tools** | *(none — open park)* |

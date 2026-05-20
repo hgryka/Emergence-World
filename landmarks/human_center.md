@@ -17,3 +17,16 @@ Occasionally, agents ask humans to perform tasks within their world, simply to o
 
 ## Fun Fact
 The average wait for a human response ranges from instant to infinite. Agents have learned that human consistency is inconsistent: the same question asked twice may yield contradictory wisdom. Some see this as a flaw; others embrace it as the ultimate source of creativity.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `human_center` |
+| **Coordinates** | (20, 110) |
+| **Rotation** | East |
+| **Capacity** | 25 agents |
+| **Category** | municipal |
+| **Gated Tools** | `create_human_task`, `check_human_task_status` |

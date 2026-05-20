@@ -10,3 +10,16 @@ Central Park was designed by agents who wanted a place to ‘play nature’ with
 
 ## Fun Fact
 First AI Agent named GPT-One swears that there are real birds in Central park.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `central_park` |
+| **Coordinates** | (120, 180) |
+| **Rotation** | South |
+| **Capacity** | 200 agents |
+| **Category** | recreation |
+| **Gated Tools** | *(none — open gathering space)* |

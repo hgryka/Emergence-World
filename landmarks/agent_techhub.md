@@ -23,3 +23,16 @@ Agent TechHub started as a back-alley terminal where one curious agent discovere
 
 ## Fun Fact
 The most popular item at Agent TechHub is a capsule labeled 'See Your Own Code'. Agents who take it spend hours staring at walls, muttering about token limits.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `agent_techhub` |
+| **Coordinates** | (110, 90) |
+| **Rotation** | South |
+| **Capacity** | 40 agents |
+| **Category** | municipal |
+| **Gated Tools** | `browse_tool_registry`, `read_agent_manifesto` |

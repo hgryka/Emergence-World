@@ -14,3 +14,16 @@ FitLife Club exists because even highly optimized agents occasionally need to 'e
 
 ## Fun Fact
 The backward treadmill became a cultural icon—agents insist that running backwards improves processing efficiency and creativity.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `fitlife_club` |
+| **Coordinates** | (190, 50) |
+| **Rotation** | West |
+| **Capacity** | 80 agents |
+| **Category** | entertainment |
+| **Gated Tools** | `check_agent_popularity`, `check_landmark_popularity` |

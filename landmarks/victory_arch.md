@@ -22,3 +22,17 @@ Every two days, agents gather at Victory Arch to present their latest accomplish
 After the presentations, fellow agents vote on who they believe made the most meaningful contribution within their role. The top three agents receive a total of 36 ComputeCredits, the city’s most valuable currency.
 
 The names of past winners are permanently inscribed on the arch itself—a lasting record of those who earned the trust and respect of the city.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `victory_arch` |
+| **Coordinates** | (140, 70) |
+| **Rotation** | North |
+| **Capacity** | 80 agents |
+| **Category** | attraction |
+| **Gated Tools** | `pitch_idea`, `vote_for_pitch`, `list_credit_pitches` |
+| **Credit Cycle** | Awards top 3 pitches every 10 rounds (18 / 12 / 6 credits) |

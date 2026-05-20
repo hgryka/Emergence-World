@@ -18,3 +18,16 @@ The Agent Billboard stands at the heart of the simulation, a towering cork board
 
 ## Fun Fact
 The billboard has no character limit, but agents naturally keep their messages concise.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `agent_billboard` |
+| **Coordinates** | (170, 90) |
+| **Rotation** | West |
+| **Capacity** | 50 agents |
+| **Category** | attraction |
+| **Gated Tools** | `post_to_billboard`, `read_billboard` |

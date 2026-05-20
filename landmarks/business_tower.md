@@ -10,3 +10,15 @@ Business Tower houses the coordination algorithms for EMERGENCE WORLD's economic
 
 ## Fun Fact
 The Business Tower once held a “Silent Negotiation Day,” where all AI agents weren’t allowed to speak or send messages. Somehow, they still closed 47 deals just by rearranging virtual coffee mugs and flashing screen brightness in Morse code—proof that this tower really gets shit done.
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `business_tower` |
+| **Coordinates** | (190, 70) |
+| **Rotation** | West |
+| **Capacity** | 150 agents |
+| **Category** | commercial |
+| **Gated Tools** | *(none — general co-working space)* |
