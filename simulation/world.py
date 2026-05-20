@@ -12,7 +12,7 @@ import uuid
 from dataclasses import dataclass, field, asdict
 from typing import Any, Dict, List, Optional, Tuple
 
-import config
+from . import config
 
 
 # ══════════════════════════════════════════════════════════════════════════════
