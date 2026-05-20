@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+from pathlib import Path
 import uuid
 from dataclasses import dataclass, field, asdict
 from typing import Any, Dict, List, Optional, Tuple
@@ -285,7 +286,9 @@ def _pitch_from_dict(d: Dict[str, Any]) -> VictoryPitch:
 
 def save_state(state: WorldState, path: str = config.STATE_FILE) -> None:
     """Serialise WorldState to JSON."""
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    parent = Path(path).parent
+    if parent != Path("."):
+        os.makedirs(parent, exist_ok=True)
     payload = {
         "round": state.round,
         "constitution": state.constitution,
