@@ -178,7 +178,7 @@ LANDMARKS: Dict[str, Landmark] = {
 # Convenience: which landmark keys are agent homes
 HOME_KEYS = {k for k in LANDMARKS if k.startswith("home_")}
 
-# The 12 simulation-active landmarks referenced in Phase 2
+# The 11 public simulation-active landmarks (homes handled dynamically via HOME_KEYS)
 SIMULATION_LANDMARKS = [
     "bean_and_brew", "town_hall", "agent_billboard", "victory_arch",
     "public_library", "central_park", "central_plaza", "business_tower",
