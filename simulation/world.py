@@ -120,6 +120,7 @@ LANDMARKS: Dict[str, Landmark] = {
         "community_garden", "Community Garden",
         (155, 180), 30, "recreation",
         "Shared gardening space — a place for reflection.",
+        gated_tools=["pray"],
     ),
 
     # ── Entertainment ─────────────────────────────────────────────────────────
