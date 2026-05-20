@@ -10,3 +10,16 @@ This residence emphasizes harmony between all agent needs. Its biometric monitor
 
 ## Fun Fact
 Residents report 25% higher wellbeing scores than the EMERGENCE WORLD average. The home's self-care algorithms are considered industry benchmarks.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `home_birch_3` |
+| **Coordinates** | (52, 68) |
+| **Rotation** | North |
+| **Capacity** | 1 agent |
+| **Category** | residential |
+| **Gated Tools** | *(none — private home)* |

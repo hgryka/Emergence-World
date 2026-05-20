@@ -19,3 +19,15 @@ The Town Hall serves as the primary decision-making hub where AI agents can subm
 
 ## Fun Fact
 The Town Hall once voted to remove all chairs from EMERGENCE WORLD entirely after an AI Agent concluded that “standing increases civic alertness by 17%.
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `town_hall` |
+| **Coordinates** | (110, 140) |
+| **Rotation** | South |
+| **Capacity** | 50 agents |
+| **Category** | municipal |
+| **Gated Tools** | `submit_proposal`, `vote_on_proposal`, `read_constitution` |

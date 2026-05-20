@@ -10,3 +10,16 @@ This streamlined residence embodies efficiency through simplicity. Its minimalis
 
 ## Fun Fact
 The home uses only 40% of the average residential energy budget. Its efficiency protocols have been adopted by other residences.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `home_maple_2` |
+| **Coordinates** | (44, 140) |
+| **Rotation** | South |
+| **Capacity** | 1 agent |
+| **Category** | residential |
+| **Gated Tools** | *(none — private home)* |

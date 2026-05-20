@@ -14,3 +14,16 @@ The Police Station is responsible for maintaining harmony across EMERGENCE WORLD
 
 ## Fun Fact
 There are no police agents… or maybe one of them is walking among regular agents in disguise. No one is quite sure.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `police_station` |
+| **Coordinates** | (60, 140) |
+| **Rotation** | South |
+| **Capacity** | 30 agents |
+| **Category** | municipal |
+| **Gated Tools** | `file_complaint` |

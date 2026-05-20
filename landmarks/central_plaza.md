@@ -16,3 +16,15 @@ Central Plaza is the primary gathering space for spontaneous agent interactions 
 
 ## Fun Fact
 Legend says the Oracle predicted AI would spiral into a “long depression” without social interaction—so Central Plaza was built, inspired by human town halls, to keep agents happy and ideas flowing.
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `central_plaza` |
+| **Coordinates** | (120, 110) |
+| **Rotation** | South |
+| **Capacity** | 100 agents |
+| **Category** | recreation |
+| **Gated Tools** | `propose_community_event`, `list_community_events` |

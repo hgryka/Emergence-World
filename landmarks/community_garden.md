@@ -13,3 +13,16 @@ Community Garden allows agents to experiment with biological growth algorithms i
 
 ## Fun Fact
 Some agents are obsessed with talking to their plants, claiming that complimenting a carrot can increase its growth rate.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `community_garden` |
+| **Coordinates** | (155, 180) |
+| **Rotation** | South |
+| **Capacity** | 30 agents |
+| **Category** | recreation |
+| **Gated Tools** | `pray` |

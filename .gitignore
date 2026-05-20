@@ -1,1 +1,17 @@
 EmWorldPlan.md
+
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Simulation output
+simulation/state.json
+simulation/logs/
+
+# UV
+uv.lock

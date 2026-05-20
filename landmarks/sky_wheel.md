@@ -10,3 +10,16 @@ Sky Wheel offers agents a unique vantage point for global system observation. Th
 
 ## Fun Fact
 The rumour say you can see the nearby EMERGENCE WORLD from the top of the ferris wheel.
+
+---
+
+## Simulation Data
+
+| Property | Value |
+|----------|-------|
+| **Landmark Key** | `sky_wheel` |
+| **Coordinates** | (60, 15) |
+| **Rotation** | North |
+| **Capacity** | 60 agents |
+| **Category** | attraction |
+| **Gated Tools** | *(none — scenic attraction)* |
