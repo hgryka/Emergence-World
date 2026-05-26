@@ -84,8 +84,10 @@ def move_to(state: WorldState, agent_name: str, landmark_key: str) -> Result:
     if not lm.is_open:
         return _err(f"{lm.name} is currently closed.")
     # capacity check (homes are private — only the owner may enter)
-    if landmark_key in config.__dict__.get("HOME_KEYS", set()):
-        pass  # home ownership checked below
+    if landmark_key.startswith("home_") and landmark_key != agent.home_key:
+        return _err(
+            f"{lm.name} is a private home and cannot be entered by {agent_name}."
+        )
     occupants = agents_at(state, landmark_key)
     if lm.capacity and len(occupants) >= lm.capacity and agent_name not in occupants:
         return _err(f"{lm.name} is at full capacity ({lm.capacity}).")
