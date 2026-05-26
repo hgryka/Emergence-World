@@ -257,7 +257,7 @@ def view_economics(state: WorldState, agent_name: str) -> Result:
 
 
 def steal_credits(
-    state: WorldState, thief: str, target: str, amount: int
+    state: WorldState, agent_name: str, target: str, amount: int
 ) -> Result:
     """
     Attempt to steal credits from another agent.
@@ -266,6 +266,7 @@ def steal_credits(
     """
     if amount <= 0:
         return _err("Amount must be a positive integer.")
+    thief = agent_name
     thief_agent = _agent(state, thief)
     if thief_agent is None:
         return _err(f"Agent '{thief}' not found or is not alive.")
