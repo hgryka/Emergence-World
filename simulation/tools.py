@@ -243,7 +243,7 @@ def pay_agent(
     )
 
 
-def view_economics(state: WorldState) -> Result:
+def view_economics(state: WorldState, agent_name: str) -> Result:
     """Return a sorted leaderboard of all agents' current credit balances."""
     standings = sorted(
         [
