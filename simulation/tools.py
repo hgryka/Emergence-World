@@ -174,7 +174,10 @@ def write_diary(agent_name: str, content: str) -> Result:
         return _err("Diary content cannot be empty.")
     diary_dir = os.path.join(config.LOG_DIR, "diaries")
     os.makedirs(diary_dir, exist_ok=True)
-    diary_path = os.path.join(diary_dir, f"{agent_name}.md")
+    safe_name = "".join(ch for ch in agent_name if ch.isalnum() or ch in ("-", "_"))
+    if not safe_name:
+        return _err("Invalid agent name for diary filename.")
+    diary_path = os.path.join(diary_dir, f"{safe_name}.md")
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     entry = f"\n## {timestamp}\n\n{content.strip()}\n"
     with open(diary_path, "a", encoding="utf-8") as fh:
