@@ -181,11 +181,11 @@ def write_diary(agent_name: str, content: str) -> Result:
 
 
 def send_message(
-    state: WorldState, from_agent: str, to_agent: str, message: str
+    state: WorldState, agent_name: str, to_agent: str, message: str
 ) -> Result:
     """Send a direct message (DM) to any living agent regardless of location."""
+    from_agent = agent_name
     sender = _agent(state, from_agent)
-    if sender is None:
         return _err(f"Agent '{from_agent}' not found or is not alive.")
     recipient = _agent(state, to_agent)
     if recipient is None:
