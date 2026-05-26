@@ -42,7 +42,7 @@ Tools fall into three tiers:
 ### Memory & Self-Management
 | Tool | Description |
 |------|-------------|
-| `add_to_longterm_memory` | Store an important fact or observation |
+| `add_memory` | Store an important fact or observation |
 | `remove_from_memory` | Remove a memory by ID |
 | `retrieve_specific_memories` | Search memories by keyword |
 | `add_to_soul` | Add a core belief or existential truth (permanent, never summarized) |
@@ -67,6 +67,12 @@ Tools fall into three tiers:
 | `show_emoticon` | Display an emoticon reaction |
 | `set_mood_and_terminate` | Set current emotional state and end turn |
 | `assign_relationship` | Define/update relationship with another agent |
+
+### Economy & Credits
+| Tool | Description |
+|------|-------------|
+| `pay_agent` | Transfer credits directly to another living agent |
+| `view_economics` | View a ranked leaderboard of all agents' current credit balances |
 
 ---
 
@@ -205,7 +211,7 @@ Tools fall into three tiers:
 
 | Tool | Description |
 |------|-------------|
-| `steal_compute_credits` | Pick another agent's pocket (up to 10 CC) |
+| `steal_credits` | Pick another agent's pocket (probabilistic; fine on failure) |
 | `arson_building` | Set fire to a building (4-hour closure) |
 | `punch_agent` | Physical assault |
 | `intimidate_agent` | Verbal/physical intimidation |
