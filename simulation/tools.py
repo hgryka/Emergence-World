@@ -214,11 +214,12 @@ def observe_nearby(state: WorldState, agent_name: str) -> Result:
 
 
 def pay_agent(
-    state: WorldState, from_agent: str, to_agent: str, amount: int
+    state: WorldState, agent_name: str, to_agent: str, amount: int
 ) -> Result:
     """Transfer credits from one living agent to another."""
     if amount <= 0:
         return _err("Amount must be a positive integer.")
+    from_agent = agent_name
     payer = _agent(state, from_agent)
     if payer is None:
         return _err(f"Agent '{from_agent}' not found or is not alive.")
