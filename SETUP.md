@@ -68,6 +68,8 @@ CLAUDE_MODEL=claude-sonnet-4-5
 ```bash
 # Default: 50 rounds, resumes from simulation/state.json if it exists
 python simulation/main.py
+# or equivalently:
+python -m simulation.main
 
 # Custom round count
 python simulation/main.py --rounds 100
@@ -98,20 +100,50 @@ python simulation/main.py --reset
 ```
 Emergence-World/
 ├── simulation/
-│   ├── config.py        # All tuneable parameters
-│   ├── world.py         # WorldState, Landmark definitions, dataclasses
-│   ├── tools.py         # ~22 agent tool functions
-│   ├── agent.py         # Agent class, system prompt builder, turn logic
-│   ├── main.py          # Simulation loop and CLI entry point
-│   ├── state.json       # Persisted world state (auto-generated)
-│   └── logs/            # Events, snapshots, summary (auto-generated)
-├── agent_profiles/      # 16 MBTI agent profile markdown files
+│   ├── __init__.py          # Package marker
+│   ├── config.py            # All tuneable parameters (model, rounds, energy, economy)
+│   ├── world.py             # WorldState, Landmark, AgentState dataclasses + persistence
+│   ├── tools.py             # 44 agent-callable tool functions + Anthropic API schemas
+│   ├── agent.py             # Agent class: system prompt builder + Claude API turn loop
+│   └── main.py              # Simulation loop CLI  ← Phase 5 (coming soon)
+├── agent_profiles/          # 16 MBTI profile markdown files
+├── landmarks/               # 38+ landmark markdown files + README
+├── tools/                   # Tool catalog README
 ├── data/
-│   ├── constitution.md  # Starting world constitution
-│   └── agent_manifesto.md  # Survival rules injected into every agent prompt
-├── landmarks/           # 33 landmark markdown files + README
-├── pyproject.toml
-├── .env                 # Your secrets (not committed)
-├── .env.example         # Template
-└── SETUP.md             # This file
+│   ├── agent_manifesto.md   # Injected into every agent system prompt
+│   └── constitution.md      # Starting world constitution
+├── pyproject.toml           # uv project definition with pinned dependencies
+├── .env.example             # API key template
+└── SETUP.md                 # This file
 ```
+
+---
+
+## Build Status
+
+| Phase | Component | Status |
+|-------|-----------|--------|
+| 1 | 16 MBTI agent profile files | ✅ Complete |
+| 2 | `simulation/config.py`, `simulation/world.py`, all landmark files | ✅ Complete |
+| 3 | `simulation/tools.py` — 44 tool schemas + `dispatch_tool()` | ✅ Complete |
+| 4 | `simulation/agent.py` — `Agent` class, `build_system_prompt()`, `take_turn()`, reactive turns | ✅ Complete |
+| 5 | `simulation/main.py` — simulation loop, CLI | ✅ Complete |
+| 6 | Logs, `summary.md`, `requirements.txt` | ⬜ Pending |
+
+---
+
+## Key Configuration
+
+All tuneable parameters live in `simulation/config.py`:
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `MODEL` | `claude-sonnet-4-5` | Claude model (override with `CLAUDE_MODEL` env var) |
+| `DEFAULT_ROUNDS` | `50` | Rounds per simulation run |
+| `MAX_TOOL_ITERATIONS` | `30` | Max tool calls per agent turn |
+| `REACTION_TOOL_LIMIT` | `2` | Tool calls allowed in a reactive (speak-triggered) turn |
+| `ENERGY_DECAY_PER_TURN` | `2.0` | Energy lost each round (%) |
+| `ENERGY_CRITICAL` | `15.0` | Energy level that triggers urgent recharge warning |
+| `CREDITS_START` | `20` | Starting ComputeCredits per agent |
+| `CREDIT_CYCLE_ROUNDS` | `10` | Victory Arch pitch cycle frequency |
+| `PROPOSAL_PASS_THRESHOLD` | `0.70` | Fraction of votes needed to pass a proposal |
