@@ -274,10 +274,12 @@ personality, your North Star Goal, and the three Manifesto rules.
                     "tool_use_id": block.id,
                     "content": _format_tool_result(result),
                 })
+                iterations += 1
+                if iterations >= config.MAX_TOOL_ITERATIONS:
+                    break
 
             # Feed tool results back into the conversation
             messages.append({"role": "user", "content": tool_results_content})
-            iterations += 1
 
         ag.turns_taken += 1
         return results
