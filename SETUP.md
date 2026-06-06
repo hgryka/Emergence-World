@@ -128,7 +128,8 @@ Emergence-World/
 | 3 | `simulation/tools.py` — 44 tool schemas + `dispatch_tool()` | ✅ Complete |
 | 4 | `simulation/agent.py` — `Agent` class, `build_system_prompt()`, `take_turn()`, reactive turns | ✅ Complete |
 | 5 | `simulation/main.py` — simulation loop, CLI | ✅ Complete |
-| 6 | Logs, `summary.md`, `requirements.txt` | ⬜ Pending |
+| 6 | Logs, `summary.md` | ✅ Complete |
+| 6 | `requirements.txt` | ⬜ Pending |
 
 ---
 
