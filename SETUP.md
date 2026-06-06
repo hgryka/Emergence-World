@@ -105,7 +105,7 @@ Emergence-World/
 │   ├── world.py             # WorldState, Landmark, AgentState dataclasses + persistence
 │   ├── tools.py             # 23 agent-callable tool functions + Anthropic API schemas
 │   ├── agent.py             # Agent class: system prompt builder + Claude API turn loop
-│   └── main.py              # Simulation loop CLI  ← Phase 5 (coming soon)
+│   └── main.py              # Simulation loop CLI
 ├── agent_profiles/          # 16 MBTI profile markdown files
 ├── landmarks/               # 38+ landmark markdown files + README
 ├── tools/                   # Tool catalog README
