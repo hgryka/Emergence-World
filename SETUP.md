@@ -103,7 +103,7 @@ Emergence-World/
 │   ├── __init__.py          # Package marker
 │   ├── config.py            # All tuneable parameters (model, rounds, energy, economy)
 │   ├── world.py             # WorldState, Landmark, AgentState dataclasses + persistence
-│   ├── tools.py             # 44 agent-callable tool functions + Anthropic API schemas
+│   ├── tools.py             # 23 agent-callable tool functions + Anthropic API schemas
 │   ├── agent.py             # Agent class: system prompt builder + Claude API turn loop
 │   └── main.py              # Simulation loop CLI  ← Phase 5 (coming soon)
 ├── agent_profiles/          # 16 MBTI profile markdown files
