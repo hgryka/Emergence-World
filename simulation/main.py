@@ -238,7 +238,7 @@ def run_simulation(rounds: int, dry_run: bool = False) -> None:
     from .token_estimator import estimate_and_print as _token_estimate
     _token_estimate(rounds=rounds, world=state)
 
-    if not dry_run:
+    if not dry_run and sys.stdin.isatty():
         try:
             answer = input("Proceed with simulation? [y/N] ").strip().lower()
         except (EOFError, KeyboardInterrupt):

@@ -52,16 +52,16 @@ if __name__ == "__main__" and __package__ in (None, ""):
     __package__ = "simulation"
 
 from . import config
-from .agent import Agent, _load_profile, _load_manifesto
+from .agent import Agent
 from .tools import TOOL_SCHEMAS
-from .world import WorldState, AgentState, LANDMARKS
+from .world import WorldState
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _chars_to_tokens(chars: int) -> int:
     """Heuristic: 1 token ≈ 4 characters for English prose."""
-    return max(1, chars // 4)
+    return max(1, (chars + 3) // 4)
 
 
 def _tool_schemas_tokens() -> int:
@@ -80,7 +80,7 @@ def _build_sample_world() -> WorldState:
     """Construct a minimal WorldState (round 1) with all 16 agents at home."""
     # Import here to avoid circular-import issues when this module is imported
     # before main.py has run.
-    from .main import build_fresh_world, build_agent_objects  # noqa: PLC0415
+    from .main import build_fresh_world  # noqa: PLC0415
     state = build_fresh_world()
     state.round = 1
     return state
@@ -112,9 +112,7 @@ class TokenEstimate:
         # ── Per full-agent-turn input tokens ──────────────────────────────
         # system prompt + tool schemas + user message + tool results
         user_msg_tokens = 30                     # "It is your turn. Act now." etc.
-        tool_result_tokens = (
-            int(avg_tool_calls_per_turn) * config.AVG_TOOL_RESULT_TOKENS
-        )
+        tool_result_tokens = avg_tool_calls_per_turn * config.AVG_TOOL_RESULT_TOKENS
         self.input_per_full_turn = (
             avg_system_prompt_tokens
             + tool_schema_tokens
@@ -154,7 +152,7 @@ class TokenEstimate:
         # ── Context-window headroom per call ──────────────────────────────
         # Worst-case single call = system prompt + schemas + accumulated conv
         # Approximate the accumulated conversation as (tool_calls × result_tokens)
-        accumulated_conv = int(avg_tool_calls_per_turn) * config.AVG_TOOL_RESULT_TOKENS
+        accumulated_conv = avg_tool_calls_per_turn * config.AVG_TOOL_RESULT_TOKENS
         self.peak_call_tokens = int(
             avg_system_prompt_tokens
             + tool_schema_tokens
@@ -218,16 +216,16 @@ def estimate_and_print(rounds: int, world: WorldState | None = None) -> TokenEst
     Run the estimator, print a human-readable report, and return the estimate.
     Call this at the start of a simulation run so the user knows what to expect.
     """
+    est = estimate(rounds=rounds, world=world)
+
     print(_SEP)
     print("  TOKEN ESTIMATE  (Phase 5.1)")
     print(_SEP)
     print(f"  Planned rounds    : {rounds}")
-    print(f"  Agents            : 16")
+    print(f"  Agents            : {est.num_agents}")
     print(f"  Model             : {config.MODEL}")
     print(f"  Context window    : {config.MODEL_CONTEXT_WINDOW:,} tokens")
     print(f"  Estimating system prompts ...")
-
-    est = estimate(rounds=rounds, world=world)
 
     print()
     print("  Per-agent system-prompt sizes")
@@ -256,7 +254,7 @@ def estimate_and_print(rounds: int, world: WorldState | None = None) -> TokenEst
     print()
     print("  Run totals")
     print("  " + "-" * 44)
-    total_full_turns = rounds * 16
+    total_full_turns = rounds * est.num_agents
     total_reactions  = int(rounds * est.reaction_turns_per_round)
     print(f"  Full agent turns       : {total_full_turns:>7,}")
     print(f"  Estimated react. turns : {total_reactions:>7,}")
