@@ -125,7 +125,7 @@ Emergence-World/
 |-------|-----------|--------|
 | 1 | 16 MBTI agent profile files | ✅ Complete |
 | 2 | `simulation/config.py`, `simulation/world.py`, all landmark files | ✅ Complete |
-| 3 | `simulation/tools.py` — 44 tool schemas + `dispatch_tool()` | ✅ Complete |
+| 3 | `simulation/tools.py` — 23 tool schemas + `dispatch_tool()` | ✅ Complete |
 | 4 | `simulation/agent.py` — `Agent` class, `build_system_prompt()`, `take_turn()`, reactive turns | ✅ Complete |
 | 5 | `simulation/main.py` — simulation loop, CLI | ✅ Complete |
 | 6 | Logs, `summary.md` | ✅ Complete |
