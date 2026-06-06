@@ -49,3 +49,19 @@ SUMMARY_FILE = os.path.join(LOG_DIR, "summary.md")
 
 CONSTITUTION_FILE = os.path.join(DATA_DIR, "constitution.md")
 MANIFESTO_FILE = os.path.join(DATA_DIR, "agent_manifesto.md")
+
+# ── Token estimation (Phase 5.1) ──────────────────────────────────────────────
+# Claude Sonnet context-window size (tokens).  Used only for % display.
+MODEL_CONTEXT_WINDOW = 200_000
+
+# Conservative average output tokens per full agent turn (reasoning + tool calls).
+# Actual varies widely; this is a planning estimate.
+AVG_OUTPUT_TOKENS_PER_TURN = 400
+
+# Average additional input tokens per tool call (tool result fed back to model).
+AVG_TOOL_RESULT_TOKENS = 120
+
+# Anthropic input/output pricing for claude-sonnet-4-5 (USD per 1 M tokens).
+# Update if pricing changes.  Set to 0 to suppress cost display.
+PRICE_INPUT_PER_MTOK  = 3.00   # $3.00 / 1M input tokens
+PRICE_OUTPUT_PER_MTOK = 15.00  # $15.00 / 1M output tokens

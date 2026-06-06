@@ -234,6 +234,19 @@ def run_simulation(rounds: int, dry_run: bool = False) -> None:
     agents = build_agent_objects(state)
     target_round = state.round + rounds
 
+    # Phase 5.1 — Token estimate before the first API call
+    from .token_estimator import estimate_and_print as _token_estimate
+    _token_estimate(rounds=rounds, world=state)
+
+    if not dry_run and sys.stdin.isatty():
+        try:
+            answer = input("Proceed with simulation? [y/N] ").strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            answer = ""
+        if answer not in ("y", "yes"):
+            print("Simulation cancelled.")
+            return
+
     print(f"Running rounds {state.round + 1} -> {target_round}  "
           f"({'dry-run' if dry_run else config.MODEL})\n", flush=True)
 
