@@ -145,7 +145,7 @@ def _save_snapshot(state: WorldState) -> None:
     _ensure_log_dirs()
     path = os.path.join(config.SNAPSHOTS_DIR, f"round_{state.round:04d}.json")
     # Reuse save_state serialisation but write to snapshot path
-    from .world import _to_dict, asdict as _asdict
+    from .world import _to_dict
     payload = {
         "round": state.round,
         "constitution": state.constitution,
@@ -236,6 +236,19 @@ def run_simulation(rounds: int, dry_run: bool = False) -> None:
 
     agents = build_agent_objects(state)
     target_round = state.round + rounds
+
+    # Phase 5.1 — Token estimate before the first API call
+    from .token_estimator import estimate_and_print as _token_estimate
+    _token_estimate(rounds=rounds, world=state)
+
+    if not dry_run:
+        try:
+            answer = input("Proceed with simulation? [y/N] ").strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            answer = ""
+        if answer not in ("y", "yes"):
+            print("Simulation cancelled.")
+            return
 
     print(f"Running rounds {state.round + 1} -> {target_round}  "
           f"({'dry-run' if dry_run else config.MODEL})\n", flush=True)
