@@ -20,6 +20,6 @@ Residents report 25% higher wellbeing scores than the EMERGENCE WORLD average. T
 | **Landmark Key** | `home_birch_3` |
 | **Coordinates** | (52, 68) |
 | **Rotation** | North |
-| **Capacity** | 1 agent |
+| **Capacity** | 2 agents |
 | **Category** | residential |
 | **Gated Tools** | *(none — private home)* |

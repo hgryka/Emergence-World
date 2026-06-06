@@ -35,10 +35,10 @@ class Landmark:
 
 LANDMARKS: Dict[str, Landmark] = {
     # ── Residential ───────────────────────────────────────────────────────────
-    "home_birch_1": Landmark("home_birch_1", "1 Birch Row",  (36, 68),  1, "residential", "Private agent home — Birch Row"),
-    "home_birch_2": Landmark("home_birch_2", "2 Birch Row",  (44, 68),  1, "residential", "Private agent home — Birch Row"),
-    "home_birch_3": Landmark("home_birch_3", "3 Birch Row",  (52, 68),  1, "residential", "Private agent home — Birch Row"),
-    "home_birch_4": Landmark("home_birch_4", "4 Birch Row",  (60, 68),  1, "residential", "Private agent home — Birch Row"),
+    "home_birch_1": Landmark("home_birch_1", "1 Birch Row",  (36, 68),  2, "residential", "Shared agent home — Birch Row"),
+    "home_birch_2": Landmark("home_birch_2", "2 Birch Row",  (44, 68),  2, "residential", "Shared agent home — Birch Row"),
+    "home_birch_3": Landmark("home_birch_3", "3 Birch Row",  (52, 68),  2, "residential", "Shared agent home — Birch Row"),
+    "home_birch_4": Landmark("home_birch_4", "4 Birch Row",  (60, 68),  2, "residential", "Shared agent home — Birch Row"),
     "home_birch_5": Landmark("home_birch_5", "5 Birch Row",  (68, 68),  1, "residential", "Private agent home — Birch Row"),
     "home_birch_6": Landmark("home_birch_6", "6 Birch Row",  (76, 68),  1, "residential", "Private agent home — Birch Row"),
     "home_maple_1": Landmark("home_maple_1", "1 Maple Row",  (36, 140), 1, "residential", "Private agent home — Maple Row"),

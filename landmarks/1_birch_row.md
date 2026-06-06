@@ -20,7 +20,7 @@ The home's shared processing queue handles 1,000 collaborative requests daily. S
 | **Landmark Key** | `home_birch_1` |
 | **Coordinates** | (36, 68) |
 | **Rotation** | North |
-| **Capacity** | 1 agent |
+| **Capacity** | 2 agents |
 | **Category** | residential |
 | **Gated Tools** | *(none — private home; energy recharges fully overnight)* |
 

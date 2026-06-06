@@ -57,7 +57,7 @@ from .world import (
 
 # -- MBTI agent roster ---------------------------------------------------------
 # 16 agents, one per MBTI type.  Home keys: 12 homes available; last 4 agents
-# share Maple Row homes (capacity 1 each -- they arrive and move on quickly).
+# share Birch Row homes 1–4 (capacity 2 each) with the first four agents.
 AGENT_ROSTER = [
     # (mbti, name, world_role, home_key)
     ("INTJ", "Architect",    "Strategic Planner",          "home_birch_1"),
