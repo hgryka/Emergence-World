@@ -342,6 +342,8 @@ personality, your North Star Goal, and the three Manifesto rules.
 
             tool_results_content: List[Dict[str, Any]] = []
             for block in tool_use_blocks:
+                if iterations >= config.REACTION_TOOL_LIMIT:
+                    break
                 result = dispatch_tool(
                     world, ag.name, block.name, block.input or {}
                 )
@@ -356,9 +358,9 @@ personality, your North Star Goal, and the three Manifesto rules.
                     "tool_use_id": block.id,
                     "content": _format_tool_result(result),
                 })
+                iterations += 1
 
             messages.append({"role": "user", "content": tool_results_content})
-            iterations += 1
 
         return results
 
