@@ -67,7 +67,7 @@ Same world. Same rules. Same tools. **Different minds.** The results diverged dr
 │   ├── world.py             # WorldState, Landmark, AgentState, persistence
 │   ├── tools.py             # 44 agent-callable tool functions + schemas
 │   ├── agent.py             # Agent class, system prompt builder, Claude API turn loop
-│   └── main.py              # Simulation loop CLI  ← Phase 5 (coming soon)
+│   └── main.py              # Simulation loop CLI
 ├── results/                 # Experiment results and metrics
 │   └── awi_metrics.md       # AWI metric definitions and Season 1 data
 ├── docs/                    # Architecture, orchestration, and technical deep-dives
