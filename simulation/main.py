@@ -276,7 +276,7 @@ def run_simulation(rounds: int, dry_run: bool = False) -> None:
 
                 # Trigger reactive turns for any speak() events
                 for event in new_events:
-                    if event.get("type") == "speak":
+                    if event.get("type") in {"speech", "speak"}:
                         trigger_reactions(
                             world=state,
                             all_agents=agents,
