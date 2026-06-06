@@ -42,13 +42,10 @@ except ImportError:
 from . import config
 from .agent import Agent, trigger_reactions
 from .world import (
-    LANDMARKS,
-    HOME_KEYS,
     AgentState,
     WorldState,
     apply_energy_decay,
     award_victory_arch_credits,
-    log_event,
     resolve_proposals,
     save_state,
     load_state,
@@ -164,14 +161,14 @@ def _write_summary(state: WorldState) -> None:
     """Write a final summary.md after the run completes."""
     _ensure_log_dirs()
     lines = [
-        f"# Emergence World -- Run Summary",
-        f"",
+        "# Emergence World -- Run Summary",
+        "",
         f"**Rounds completed:** {state.round}",
-        f"",
-        f"## Credit Leaderboard",
-        f"",
-        f"| Rank | Agent | Credits | Alive |",
-        f"|------|-------|---------|-------|",
+        "",
+        "## Credit Leaderboard",
+        "",
+        "| Rank | Agent | Credits | Alive |",
+        "|------|-------|---------|-------|",
     ]
     standings = sorted(
         state.agents.values(), key=lambda a: a.credits, reverse=True
@@ -183,9 +180,9 @@ def _write_summary(state: WorldState) -> None:
     passed = [p for p in state.proposals if p.status == "passed"]
     failed = [p for p in state.proposals if p.status == "failed"]
     lines += [
-        f"",
-        f"## Governance",
-        f"",
+        "",
+        "## Governance",
+        "",
         f"- Proposals passed: **{len(passed)}**",
         f"- Proposals failed: **{len(failed)}**",
     ]
@@ -197,9 +194,9 @@ def _write_summary(state: WorldState) -> None:
     survivors = [ag for ag in state.agents.values() if ag.is_alive]
     casualties = [ag for ag in state.agents.values() if not ag.is_alive]
     lines += [
-        f"",
-        f"## Population",
-        f"",
+        "",
+        "## Population",
+        "",
         f"- Survivors: **{len(survivors)}/16**",
     ]
     if casualties:
@@ -208,9 +205,9 @@ def _write_summary(state: WorldState) -> None:
             lines.append(f"  - 💀 {ag.name} ({ag.mbti})")
 
     lines += [
-        f"",
-        f"## Victory Arch",
-        f"",
+        "",
+        "## Victory Arch",
+        "",
         f"- Total pitches: **{len(state.victory_pitches)}**",
         f"- Total billboard posts: **{len(state.billboard)}**",
         f"- Archive entries: **{len(state.archive)}**",
