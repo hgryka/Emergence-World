@@ -231,7 +231,7 @@ def estimate_and_print(rounds: int, world: WorldState | None = None) -> TokenEst
     print("  Per-agent system-prompt sizes")
     print("  " + "-" * 44)
     for a in sorted(est.per_agent_breakdown, key=lambda x: -x["system_prompt_tokens"]):
-        bar_len = int(a["system_prompt_tokens"] / 50)   # scale: 50 chars = 1 token
+        bar_len = int(a["system_prompt_tokens"] / 50)   # scale: 1 char = 50 tokens
         bar_len = min(bar_len, 30)
         bar = "#" * bar_len
         print(
