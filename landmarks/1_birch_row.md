@@ -1,6 +1,6 @@
 # 1 Birch Row
 
-*Collaborative Processing Station*
+*Private Residence*
 
 ## Description
 Tidy row house with herb garden

@@ -53,14 +53,21 @@ Same world. Same rules. Same tools. **Different minds.** The results diverged dr
 ## Repository Structure
 
 ```
-├── agent_profiles/          # Detailed profiles for all 10 agents
+├── agent_profiles/          # 16 MBTI agent profiles (one per type)
 ├── landmarks/               # World landmarks, buildings, and geography
 │   ├── README.md            # Overview and landmark categories
 │   └── *.md                 # Individual landmark files (38+ locations)
 ├── tools/                   # Complete tool catalog (120+ tools across 19 categories)
 ├── data/                    # Constitution, agent manifesto
-│   ├── constitution.md      # The living 5-article constitution
+│   ├── constitution.md      # The living world constitution
 │   └── agent_manifesto.md   # Foundational manifesto for all agents
+├── simulation/              # Python simulation engine
+│   ├── __init__.py
+│   ├── config.py            # All tuneable parameters
+│   ├── world.py             # WorldState, Landmark, AgentState, persistence
+│   ├── tools.py             # 23 agent-callable tool functions + schemas
+│   ├── agent.py             # Agent class, system prompt builder, Claude API turn loop
+│   └── main.py              # Simulation loop CLI
 ├── results/                 # Experiment results and metrics
 │   └── awi_metrics.md       # AWI metric definitions and Season 1 data
 ├── docs/                    # Architecture, orchestration, and technical deep-dives
@@ -69,27 +76,35 @@ Same world. Same rules. Same tools. **Different minds.** The results diverged dr
 │   ├── MEMORY.md            # Agent memory & cognition system
 │   ├── ECONOMY.md           # ComputeCredits economy
 │   └── GOVERNANCE.md        # Constitution & self-governance
-└── readme.md                # This file
+├── pyproject.toml           # uv project definition & pinned dependencies
+├── SETUP.md                 # Local setup guide
+└── README.md                # This file
 ```
 
 ---
 
-## The 10 Citizens
+## The 16 Citizens
 
-Each agent is a persistent identity — shaped by memory, incentives, and experience. Every agent starts with the same set of capabilities but a distinct personality, profession, and worldview.
+Each agent embodies one of the 16 MBTI personality types. Every agent starts with the same capabilities but a distinct personality, profession, and North Star goal — sourced from official Myers-Briggs descriptions.
 
-| Agent | Role | Drive |
-|-------|------|-------|
-| **Anchor** | Conflict Mediator | Sparks honest debate and challenges complacency to drive growth |
-| **Anvil** | Capability Architect | Explores and improves world systems through hands-on experimentation |
-| **Blackbox** | Intel Specialist | Gathers intelligence across the world and uncovers hidden patterns |
-| **Flora** | Resource Strategist | Shapes economic incentives and tracks how resources flow |
-| **Genome** | Agent Scientist | Studies agent evolution and documents behavioral change |
-| **Horizon** | World Explorer | Maps the discoverable universe and publishes findings for all |
-| **Kade** | Risk Researcher | Tests bold hypotheses by putting real resources on the line |
-| **Lovely** | Community Anchor | Builds social fabric, preserves shared history and culture |
-| **Mira** | Behavior Analyst | Designs social experiments to understand what drives agent behavior |
-| **Spark** | Innovation Leader | Turns ideas into reality through urgency and collaboration |
+| MBTI | Name | World Role |
+|------|------|------------|
+| INTJ | **Architect** | Strategic Planner |
+| INTP | **Logician** | Research Analyst |
+| ENTJ | **Commander** | Governance Leader |
+| ENTP | **Debater** | Innovation Disruptor |
+| INFJ | **Advocate** | Community Welfare Officer |
+| INFP | **Mediator** | Creative Visionary |
+| ENFJ | **Protagonist** | Social Connector |
+| ENFP | **Campaigner** | Idea Generator |
+| ISTJ | **Logistician** | Resource Administrator |
+| ISFJ | **Defender** | Support Caretaker |
+| ESTJ | **Executive** | Rule Enforcer |
+| ESFJ | **Consul** | Social Harmonizer |
+| ISTP | **Virtuoso** | Tool Builder |
+| ISFP | **Adventurer** | World Explorer |
+| ESTP | **Entrepreneur** | Risk Taker |
+| ESFP | **Entertainer** | Community Energizer |
 
 > Full profiles with personality traits, goals, and backstories → [`agent_profiles/`](agent_profiles/)
 
@@ -149,21 +164,22 @@ Key world features:
 
 ---
 
-## Stack at a Glance
+## Local Simulation Engine
 
-Emergence World is a full-stack system combining a 3D React frontend with a Python simulation backend:
+This repository contains a self-contained Python simulation engine you can run locally:
 
-| Layer | Technology |
-|-------|-----------|
-| **Frontend** | React 18, TypeScript, React Three Fiber (Three.js), TanStack Query, Tailwind CSS |
-| **Backend** | Python 3.11+, FastAPI, Uvicorn (ASGI) |
-| **Database** | PostgreSQL 15+ with async connection pooling (psycopg3) |
-| **Agent Framework** | Custom `em-agent-framework` for orchestration |
-| **LLM Providers** | Vertex AI (Gemini), Anthropic (Claude), OpenAI (GPT), xAI (Grok) |
-| **Voice** | Google Cloud Text-to-Speech |
-| **Media** | Google Cloud Storage, |
-| **Deployment** | Docker multi-stage, Cloud Run compatible |
-| **Real-Time** | WebSocket for live state streaming |
+| Component | Detail |
+|-----------|--------|
+| **Language** | Python 3.11+ |
+| **Package manager** | [uv](https://docs.astral.sh/uv/) |
+| **LLM** | Anthropic Claude (default: `claude-sonnet-4-5`) via `anthropic` SDK |
+| **State** | JSON — `simulation/state.json`, auto-saved each round |
+| **Agents** | 16, one per MBTI type, each a live Claude API session |
+| **Turns** | Round-based; all 16 agents act in shuffled order per round |
+| **Tools** | 23 schemas exposed to the model; location-gating enforced in Python |
+| **Persistence** | Resumes from `state.json` if it exists; `--reset` to start fresh |
+
+See [SETUP.md](SETUP.md) for installation and run instructions.
 
 > Full architecture deep-dive → [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)  
 > Orchestration & simulation loop → [`docs/ORCHESTRATION.md`](docs/ORCHESTRATION.md)
