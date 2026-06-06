@@ -176,7 +176,7 @@ This repository contains a self-contained Python simulation engine you can run l
 | **State** | JSON — `simulation/state.json`, auto-saved each round |
 | **Agents** | 16, one per MBTI type, each a live Claude API session |
 | **Turns** | Round-based; all 16 agents act in shuffled order per round |
-| **Tools** | 44 schemas exposed to the model; location-gating enforced in Python |
+| **Tools** | 23 schemas exposed to the model; location-gating enforced in Python |
 | **Persistence** | Resumes from `state.json` if it exists; `--reset` to start fresh |
 
 See [SETUP.md](SETUP.md) for installation and run instructions.
