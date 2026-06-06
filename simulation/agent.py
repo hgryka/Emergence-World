@@ -260,6 +260,8 @@ personality, your North Star Goal, and the three Manifesto rules.
 
             tool_results_content: List[Dict[str, Any]] = []
             for block in tool_use_blocks:
+                if iterations >= config.MAX_TOOL_ITERATIONS:
+                    break
                 result = dispatch_tool(
                     world, ag.name, block.name, block.input or {}
                 )
@@ -275,8 +277,6 @@ personality, your North Star Goal, and the three Manifesto rules.
                     "content": _format_tool_result(result),
                 })
                 iterations += 1
-                if iterations >= config.MAX_TOOL_ITERATIONS:
-                    break
 
             # Feed tool results back into the conversation
             messages.append({"role": "user", "content": tool_results_content})
