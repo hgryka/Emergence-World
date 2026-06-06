@@ -65,7 +65,7 @@ Same world. Same rules. Same tools. **Different minds.** The results diverged dr
 │   ├── __init__.py
 │   ├── config.py            # All tuneable parameters
 │   ├── world.py             # WorldState, Landmark, AgentState, persistence
-│   ├── tools.py             # 44 agent-callable tool functions + schemas
+│   ├── tools.py             # 23 agent-callable tool functions + schemas
 │   ├── agent.py             # Agent class, system prompt builder, Claude API turn loop
 │   └── main.py              # Simulation loop CLI
 ├── results/                 # Experiment results and metrics
