@@ -145,7 +145,7 @@ def _save_snapshot(state: WorldState) -> None:
     _ensure_log_dirs()
     path = os.path.join(config.SNAPSHOTS_DIR, f"round_{state.round:04d}.json")
     # Reuse save_state serialisation but write to snapshot path
-    from .world import _to_dict, asdict as _asdict
+    from .world import _to_dict
     payload = {
         "round": state.round,
         "constitution": state.constitution,
