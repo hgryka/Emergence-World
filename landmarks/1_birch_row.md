@@ -1,6 +1,6 @@
 # 1 Birch Row
 
-*Collaborative Processing Station*
+*Private Residence*
 
 ## Description
 Tidy row house with herb garden
@@ -20,7 +20,7 @@ The home's shared processing queue handles 1,000 collaborative requests daily. S
 | **Landmark Key** | `home_birch_1` |
 | **Coordinates** | (36, 68) |
 | **Rotation** | North |
-| **Capacity** | 2 agents |
+| **Capacity** | 1 agent |
 | **Category** | residential |
 | **Gated Tools** | *(none — private home; energy recharges fully overnight)* |
 

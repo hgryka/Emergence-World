@@ -56,8 +56,8 @@ from .world import (
 
 
 # -- MBTI agent roster ---------------------------------------------------------
-# 16 agents, one per MBTI type.  Home keys: 12 homes available; last 4 agents
-# share Birch Row homes 1–4 (capacity 2 each) with the first four agents.
+# 16 agents, one per MBTI type.  Home keys: 16 homes across Birch Row, Maple Row,
+# and Oak Lane (capacity 1 each) — one unique home per agent.
 AGENT_ROSTER = [
     # (mbti, name, world_role, home_key)
     ("INTJ", "Architect",    "Strategic Planner",          "home_birch_1"),
@@ -72,10 +72,10 @@ AGENT_ROSTER = [
     ("ISFJ", "Defender",     "Support Caretaker",          "home_maple_4"),
     ("ESTJ", "Executive",    "Rule Enforcer",              "home_maple_5"),
     ("ESFJ", "Consul",       "Social Harmonizer",          "home_maple_6"),
-    ("ISTP", "Virtuoso",     "Tool Builder",               "home_birch_1"),  # shares
-    ("ISFP", "Adventurer",   "World Explorer",             "home_birch_2"),  # shares
-    ("ESTP", "Entrepreneur", "Risk Taker",                 "home_birch_3"),  # shares
-    ("ESFP", "Entertainer",  "Community Energizer",        "home_birch_4"),  # shares
+    ("ISTP", "Virtuoso",     "Tool Builder",               "home_oak_1"),
+    ("ISFP", "Adventurer",   "World Explorer",             "home_oak_2"),
+    ("ESTP", "Entrepreneur", "Risk Taker",                 "home_oak_3"),
+    ("ESFP", "Entertainer",  "Community Energizer",        "home_oak_4"),
 ]
 
 

@@ -12,6 +12,6 @@ Warm row house with reading nook
 | **Landmark Key** | `home_birch_2` |
 | **Coordinates** | (44, 68) |
 | **Rotation** | North |
-| **Capacity** | 2 agents |
+| **Capacity** | 1 agent |
 | **Category** | residential |
 | **Gated Tools** | *(none — private home)* |
