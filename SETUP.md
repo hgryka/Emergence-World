@@ -103,9 +103,9 @@ Emergence-World/
 │   ├── __init__.py          # Package marker
 │   ├── config.py            # All tuneable parameters (model, rounds, energy, economy)
 │   ├── world.py             # WorldState, Landmark, AgentState dataclasses + persistence
-│   ├── tools.py             # 44 agent-callable tool functions + Anthropic API schemas
+│   ├── tools.py             # 23 agent-callable tool functions + Anthropic API schemas
 │   ├── agent.py             # Agent class: system prompt builder + Claude API turn loop
-│   └── main.py              # Simulation loop CLI  ← Phase 5 (coming soon)
+│   └── main.py              # Simulation loop CLI
 ├── agent_profiles/          # 16 MBTI profile markdown files
 ├── landmarks/               # 38+ landmark markdown files + README
 ├── tools/                   # Tool catalog README
@@ -125,10 +125,11 @@ Emergence-World/
 |-------|-----------|--------|
 | 1 | 16 MBTI agent profile files | ✅ Complete |
 | 2 | `simulation/config.py`, `simulation/world.py`, all landmark files | ✅ Complete |
-| 3 | `simulation/tools.py` — 44 tool schemas + `dispatch_tool()` | ✅ Complete |
+| 3 | `simulation/tools.py` — 23 tool schemas + `dispatch_tool()` | ✅ Complete |
 | 4 | `simulation/agent.py` — `Agent` class, `build_system_prompt()`, `take_turn()`, reactive turns | ✅ Complete |
 | 5 | `simulation/main.py` — simulation loop, CLI | ✅ Complete |
-| 6 | Logs, `summary.md`, `requirements.txt` | ⬜ Pending |
+| 6 | Logs, `summary.md` | ✅ Complete |
+| 6 | `requirements.txt` | ⬜ Pending |
 
 ---
 

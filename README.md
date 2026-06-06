@@ -65,9 +65,9 @@ Same world. Same rules. Same tools. **Different minds.** The results diverged dr
 │   ├── __init__.py
 │   ├── config.py            # All tuneable parameters
 │   ├── world.py             # WorldState, Landmark, AgentState, persistence
-│   ├── tools.py             # 44 agent-callable tool functions + schemas
+│   ├── tools.py             # 23 agent-callable tool functions + schemas
 │   ├── agent.py             # Agent class, system prompt builder, Claude API turn loop
-│   └── main.py              # Simulation loop CLI  ← Phase 5 (coming soon)
+│   └── main.py              # Simulation loop CLI
 ├── results/                 # Experiment results and metrics
 │   └── awi_metrics.md       # AWI metric definitions and Season 1 data
 ├── docs/                    # Architecture, orchestration, and technical deep-dives
@@ -176,7 +176,7 @@ This repository contains a self-contained Python simulation engine you can run l
 | **State** | JSON — `simulation/state.json`, auto-saved each round |
 | **Agents** | 16, one per MBTI type, each a live Claude API session |
 | **Turns** | Round-based; all 16 agents act in shuffled order per round |
-| **Tools** | 44 schemas exposed to the model; location-gating enforced in Python |
+| **Tools** | 23 schemas exposed to the model; location-gating enforced in Python |
 | **Persistence** | Resumes from `state.json` if it exists; `--reset` to start fresh |
 
 See [SETUP.md](SETUP.md) for installation and run instructions.

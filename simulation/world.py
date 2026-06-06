@@ -47,6 +47,10 @@ LANDMARKS: Dict[str, Landmark] = {
     "home_maple_4": Landmark("home_maple_4", "4 Maple Row",  (60, 140), 1, "residential", "Private agent home — Maple Row"),
     "home_maple_5": Landmark("home_maple_5", "5 Maple Row",  (68, 140), 1, "residential", "Private agent home — Maple Row"),
     "home_maple_6": Landmark("home_maple_6", "6 Maple Row",  (76, 140), 1, "residential", "Private agent home — Maple Row"),
+    "home_oak_1":   Landmark("home_oak_1",   "1 Oak Lane",   (36, 180), 1, "residential", "Private agent home — Oak Lane"),
+    "home_oak_2":   Landmark("home_oak_2",   "2 Oak Lane",   (44, 180), 1, "residential", "Private agent home — Oak Lane"),
+    "home_oak_3":   Landmark("home_oak_3",   "3 Oak Lane",   (52, 180), 1, "residential", "Private agent home — Oak Lane"),
+    "home_oak_4":   Landmark("home_oak_4",   "4 Oak Lane",   (60, 180), 1, "residential", "Private agent home — Oak Lane"),
 
     # ── Commercial ────────────────────────────────────────────────────────────
     "bean_and_brew": Landmark(

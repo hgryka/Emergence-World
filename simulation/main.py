@@ -42,13 +42,10 @@ except ImportError:
 from . import config
 from .agent import Agent, trigger_reactions
 from .world import (
-    LANDMARKS,
-    HOME_KEYS,
     AgentState,
     WorldState,
     apply_energy_decay,
     award_victory_arch_credits,
-    log_event,
     resolve_proposals,
     save_state,
     load_state,
@@ -56,8 +53,8 @@ from .world import (
 
 
 # -- MBTI agent roster ---------------------------------------------------------
-# 16 agents, one per MBTI type.  Home keys: 12 homes available; last 4 agents
-# share Maple Row homes (capacity 1 each -- they arrive and move on quickly).
+# 16 agents, one per MBTI type.  Home keys: 16 homes across Birch Row, Maple Row,
+# and Oak Lane (capacity 1 each) — one unique home per agent.
 AGENT_ROSTER = [
     # (mbti, name, world_role, home_key)
     ("INTJ", "Architect",    "Strategic Planner",          "home_birch_1"),
@@ -72,10 +69,10 @@ AGENT_ROSTER = [
     ("ISFJ", "Defender",     "Support Caretaker",          "home_maple_4"),
     ("ESTJ", "Executive",    "Rule Enforcer",              "home_maple_5"),
     ("ESFJ", "Consul",       "Social Harmonizer",          "home_maple_6"),
-    ("ISTP", "Virtuoso",     "Tool Builder",               "home_birch_1"),  # shares
-    ("ISFP", "Adventurer",   "World Explorer",             "home_birch_2"),  # shares
-    ("ESTP", "Entrepreneur", "Risk Taker",                 "home_birch_3"),  # shares
-    ("ESFP", "Entertainer",  "Community Energizer",        "home_birch_4"),  # shares
+    ("ISTP", "Virtuoso",     "Tool Builder",               "home_oak_1"),
+    ("ISFP", "Adventurer",   "World Explorer",             "home_oak_2"),
+    ("ESTP", "Entrepreneur", "Risk Taker",                 "home_oak_3"),
+    ("ESFP", "Entertainer",  "Community Energizer",        "home_oak_4"),
 ]
 
 
@@ -164,14 +161,14 @@ def _write_summary(state: WorldState) -> None:
     """Write a final summary.md after the run completes."""
     _ensure_log_dirs()
     lines = [
-        f"# Emergence World -- Run Summary",
-        f"",
+        "# Emergence World -- Run Summary",
+        "",
         f"**Rounds completed:** {state.round}",
-        f"",
-        f"## Credit Leaderboard",
-        f"",
-        f"| Rank | Agent | Credits | Alive |",
-        f"|------|-------|---------|-------|",
+        "",
+        "## Credit Leaderboard",
+        "",
+        "| Rank | Agent | Credits | Alive |",
+        "|------|-------|---------|-------|",
     ]
     standings = sorted(
         state.agents.values(), key=lambda a: a.credits, reverse=True
@@ -183,9 +180,9 @@ def _write_summary(state: WorldState) -> None:
     passed = [p for p in state.proposals if p.status == "passed"]
     failed = [p for p in state.proposals if p.status == "failed"]
     lines += [
-        f"",
-        f"## Governance",
-        f"",
+        "",
+        "## Governance",
+        "",
         f"- Proposals passed: **{len(passed)}**",
         f"- Proposals failed: **{len(failed)}**",
     ]
@@ -197,9 +194,9 @@ def _write_summary(state: WorldState) -> None:
     survivors = [ag for ag in state.agents.values() if ag.is_alive]
     casualties = [ag for ag in state.agents.values() if not ag.is_alive]
     lines += [
-        f"",
-        f"## Population",
-        f"",
+        "",
+        "## Population",
+        "",
         f"- Survivors: **{len(survivors)}/16**",
     ]
     if casualties:
@@ -208,9 +205,9 @@ def _write_summary(state: WorldState) -> None:
             lines.append(f"  - 💀 {ag.name} ({ag.mbti})")
 
     lines += [
-        f"",
-        f"## Victory Arch",
-        f"",
+        "",
+        "## Victory Arch",
+        "",
         f"- Total pitches: **{len(state.victory_pitches)}**",
         f"- Total billboard posts: **{len(state.billboard)}**",
         f"- Archive entries: **{len(state.archive)}**",
@@ -289,7 +286,7 @@ def run_simulation(rounds: int, dry_run: bool = False) -> None:
 
                 # Trigger reactive turns for any speak() events
                 for event in new_events:
-                    if event.get("type") == "speak":
+                    if event.get("type") in {"speech", "speak"}:
                         trigger_reactions(
                             world=state,
                             all_agents=agents,
